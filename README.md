@@ -1,71 +1,36 @@
-# しるべ旅 🦌✈️
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-**道東の「体験」をつなぐ旅行ポータル**
+## Getting Started
 
-https://tabi.shirubelab.jp
-
----
-
-## これは何？
-
-しるべ旅は、北海道・道東エリアの体験型観光コンテンツを紹介するWebポータルです。
-株式会社しるべ（中標津町）が運営する旅行サービス手配業のオンライン窓口。
-
-### 特徴
-- 道東の体験プログラム（酪農・漁業・自然・文化）を検索・閲覧
-- 体験ごとの詳細ページ（内容・料金・所要時間・アクセス）
-- 予約・問い合わせ導線
-
----
-
-## 技術スタック
-
-| レイヤー | 技術 |
-|---------|------|
-| フレームワーク | Next.js (App Router) |
-| スタイリング | Tailwind CSS |
-| ホスティング | Vercel |
-| ドメイン | tabi.shirubelab.jp（shirubelab.jp サブドメイン） |
-
----
-
-## 開発
+First, run the development server:
 
 ```bash
-# インストール
-pnpm install
-
-# 開発サーバー起動
+npm run dev
+# or
+yarn dev
+# or
 pnpm dev
-# → http://localhost:3000
+# or
+bun dev
 ```
 
----
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## デプロイ
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-`main` ブランチにpushすると、Vercel経由で自動デプロイされます。
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
----
+## Learn More
 
-## 関連プロジェクト
+To learn more about Next.js, take a look at the following resources:
 
-- [milk-line-harness](https://github.com/okudatamiobanzai-web/milk-line-harness) — LINE CRM（友だち管理・配信）
-- [micelle](https://github.com/okudatamiobanzai-web/micelle) — 地域の共助プラットフォーム
-- [yubitoma](https://github.com/okudatamiobanzai-web/yubitoma) — 地域イベント・飲み会マッチング
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
----
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## 運営
+## Deploy on Vercel
 
-**株式会社しるべ**
-- 代表: 久保竜太郎
-- 所在地: 北海道標津郡中標津町
-- コワーキングスペース milk 運営
-- 「最果てを、最先端に。」
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
----
-
-## ライセンス
-
-MIT
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
