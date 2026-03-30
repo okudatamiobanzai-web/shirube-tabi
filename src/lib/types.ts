@@ -21,9 +21,11 @@ export interface BaseItem {
   price?: string;
   videoId?: string | null;
   tags?: string[];
+  seasons?: string[];
   lat?: number;
   lng?: number;
   address?: string;
+  accessTime?: string;
 }
 
 export interface Experience extends BaseItem {

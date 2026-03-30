@@ -27,7 +27,7 @@ export default function ListPage({ layerId, onBack, onSelectItem }: Props) {
 
   const filtered = items.filter((i) => {
     const catMatch = cat === "all" || (i as Experience).cat === cat;
-    const ssnMatch = ssn === "all" || !(i as Experience).seasons || (i as Experience).seasons?.includes(ssn);
+    const ssnMatch = ssn === "all" || !i.seasons || i.seasons.includes(ssn);
     return catMatch && ssnMatch;
   });
 
@@ -72,24 +72,22 @@ export default function ListPage({ layerId, onBack, onSelectItem }: Props) {
         </div>
       )}
 
-      {layerId === "experience" && (
-        <div className="flex gap-1.5 mb-3 overflow-x-auto hide-scrollbar">
-          {SEASONS.map((s) => (
-            <button
-              key={s.id}
-              onClick={() => setSsn(s.id)}
-              className="py-1.5 px-3 rounded-md border text-[10px] font-[family-name:var(--font-sans)] cursor-pointer whitespace-nowrap"
-              style={{
-                borderColor: ssn === s.id ? "#F08070" : "#DDD7CC",
-                background: ssn === s.id ? "#FDF0EE" : "transparent",
-                color: ssn === s.id ? "#E5382A" : "#9A9488",
-              }}
-            >
-              {t(`season.${s.id}` as Parameters<typeof t>[0])}
-            </button>
-          ))}
-        </div>
-      )}
+      <div className="flex gap-1.5 mb-3 overflow-x-auto hide-scrollbar">
+        {SEASONS.map((s) => (
+          <button
+            key={s.id}
+            onClick={() => setSsn(s.id)}
+            className="py-1.5 px-3 rounded-md border text-[10px] font-[family-name:var(--font-sans)] cursor-pointer whitespace-nowrap"
+            style={{
+              borderColor: ssn === s.id ? "#F08070" : "#DDD7CC",
+              background: ssn === s.id ? "#FDF0EE" : "transparent",
+              color: ssn === s.id ? "#E5382A" : "#9A9488",
+            }}
+          >
+            {t(`season.${s.id}` as Parameters<typeof t>[0])}
+          </button>
+        ))}
+      </div>
 
       <div className="grid grid-cols-2 gap-2">
         {filtered.map((item) => (

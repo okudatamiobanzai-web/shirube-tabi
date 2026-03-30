@@ -7,6 +7,7 @@ import DetailPage from "@/components/DetailPage";
 import BuilderPage from "@/components/BuilderPage";
 import MyListDrawer from "@/components/MyListDrawer";
 import MyListBadge from "@/components/MyListBadge";
+import ScrollToTop from "@/components/ScrollToTop";
 import { useMyList } from "@/lib/mylist-context";
 import type { AnyItem } from "@/lib/types";
 
@@ -62,7 +63,10 @@ export default function Home() {
       </div>
 
       {page !== "builder" && (
-        <MyListBadge onClick={() => setDrawerOpen(true)} />
+        <>
+          <ScrollToTop scrollRef={scrollRef} />
+          <MyListBadge onClick={() => setDrawerOpen(true)} />
+        </>
       )}
 
       <MyListDrawer

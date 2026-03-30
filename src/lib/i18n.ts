@@ -161,6 +161,21 @@ const dict = {
   // Footer
   "footer.copyright": { ja: "© 2026 株式会社しるべ", en: "© 2026 Shirube Inc." },
   "footer.contact": { ja: "お問い合わせ", en: "Contact Us" },
+
+  // Reviews section
+  "section.reviews": { ja: "お客様の声", en: "Customer Reviews" },
+
+  // FAQ section
+  "section.faq": { ja: "よくある質問", en: "FAQ" },
+
+  // Back to top button
+  "btn.backToTop": { ja: "トップに戻る", en: "Back to Top" },
+
+  // Direct consult button
+  "btn.consultDirect": { ja: "旅の相談をする", en: "Consult About Your Trip" },
+
+  // MyList empty guide
+  "mylist.emptyGuide": { ja: "気になる体験を♡で追加してみましょう", en: "Tap ♡ to add experiences you like" },
 } as const;
 
 export type TKey = keyof typeof dict;

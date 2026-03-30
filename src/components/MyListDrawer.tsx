@@ -62,9 +62,15 @@ export default function MyListDrawer({ open, onClose, onBuild, onSelectItem }: P
 
         <div className="px-4.5 pt-3 pb-5">
           {grouped.length === 0 ? (
-            <p className="font-[family-name:var(--font-sans)] text-[11px] text-mute text-center py-6 leading-[1.7] whitespace-pre-line">
-              {t("mylist.empty")}
-            </p>
+            <div className="text-center py-8">
+              <div className="text-[32px] mb-3">♡</div>
+              <p className="font-[family-name:var(--font-sans)] text-[12px] text-sub m-0 mb-1.5">
+                {t("mylist.emptyGuide")}
+              </p>
+              <p className="font-[family-name:var(--font-sans)] text-[10px] text-mute m-0 leading-[1.7]">
+                {t("mylist.empty")}
+              </p>
+            </div>
           ) : (
             grouped.map((g) => (
               <div key={g.id} className="mb-3.5">

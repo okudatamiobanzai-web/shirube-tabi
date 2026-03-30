@@ -43,15 +43,40 @@ export default function BuilderPage({ onBack }: Props) {
     return Object.keys(e).length === 0;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!validate()) return;
 
-    // フォーム内容をまとめてLINEに送信
+    // フォーム内容をまとめる
     const wish = (document.querySelector("textarea") as HTMLTextAreaElement)?.value || "";
     const phone = (document.querySelectorAll("input[placeholder='090-xxxx-xxxx']")[0] as HTMLInputElement)?.value || "";
     const mylistNames = liked.map((i) => i.name).join("、") || "なし";
     const courseInfo = baseCourse?.title || "なし";
 
+    // API送信（バックエンド保存）
+    try {
+      await fetch("/api/consult", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          when,
+          style: style || "",
+          days: days || "",
+          transport: transport || "",
+          budget: bgt || "",
+          wish,
+          phone,
+          selectedItems: liked.map((i) => i.name),
+          baseCourse: baseCourse?.title || null,
+        }),
+      });
+    } catch {
+      // API failure should not block submission
+      console.error("Failed to save consultation");
+    }
+
+    // LINE送信（フォールバック）
     const lines = [
       `【しるべ旅 相談】`,
       `お名前: ${name}`,
@@ -68,11 +93,14 @@ export default function BuilderPage({ onBack }: Props) {
     ];
 
     const body = encodeURIComponent(lines.join("\n"));
-    // しるべ旅 LINE公式アカウントにメッセージを送信
-    // @shirubelab のLINE ID（適宜変更してください）
     const lineUrl = `https://line.me/R/oaMessage/@shirubelab/?${body}`;
 
-    window.open(lineUrl, "_blank");
+    // Try to open LINE, but show success regardless (for PC users)
+    try {
+      window.open(lineUrl, "_blank");
+    } catch {
+      // LINE may not open on PC - that's OK
+    }
     setSent(true);
   };
 
@@ -113,6 +141,17 @@ export default function BuilderPage({ onBack }: Props) {
         <p className="font-[family-name:var(--font-serif)] text-[12px] text-mute mt-5 italic">
           {t("thanks.footer")}
         </p>
+        <button
+          onClick={onBack}
+          className="mt-6 py-3 px-8 rounded-md font-[family-name:var(--font-serif)] text-[13px] cursor-pointer tracking-[0.03em]"
+          style={{
+            background: "transparent",
+            color: "#E5382A",
+            border: "1px solid #F08070",
+          }}
+        >
+          {t("btn.backToTop")}
+        </button>
       </div>
     );
   }

@@ -130,38 +130,46 @@ export const EXPERIENCES: Experience[] = [
 
 export const PEOPLE: Person[] = [
   {
-    id: "p1", layer: "person", name: "佐藤 勇次", area: "標津",
+    id: "p1", layer: "person", name: "佐藤 勇次", area: "標津", areaId: "shibetsu",
     specialty: "漁付・船釣り", photo: P.fisherman, gallery: [P.fisherman, P.fishing],
     desc: "標津で3代続く漁師。荒海でも知り尽くした男。",
     message: "壮大な味わいをなめんなよ俺たちにある。一緒に船に乗ろう。",
+    price: "¥8,000〜", seasons: ["spring", "summer", "autumn"], tags: ["漁業", "ガイド"],
+    accessTime: "空港から車30分",
     sns: [
       { type: "instagram", url: "https://instagram.com/example", label: "@sato_yuji" },
     ],
   },
   {
-    id: "p2", layer: "person", name: "木村 美代子", area: "中標津",
+    id: "p2", layer: "person", name: "木村 美代子", area: "中標津", areaId: "nakashibetsu",
     specialty: "山菜の達人", photo: P.guide, gallery: [P.guide, P.foraging],
     desc: "農家出身。50年の山菜採り経験をもつガイド。",
     message: "この土地の恵みを、一緒に見つけに行きましょう。",
+    seasons: ["spring"], tags: ["山菜", "ガイド"],
+    accessTime: "空港から車5分",
     sns: [
       { type: "facebook", url: "https://facebook.com/example", label: "木村美代子" },
     ],
   },
   {
-    id: "p3", layer: "person", name: "田中 牧場", area: "別海",
+    id: "p3", layer: "person", name: "田中 牧場", area: "別海", areaId: "betsukai",
     specialty: "酪農家・牧場", photo: P.farmer, gallery: [P.farmer, P.cycling2],
     desc: "搾乳からバター作りまで3代目。",
     message: "うちの牛は人間よりも気持ちいいと思う。",
+    price: "¥5,000〜", seasons: ["spring", "summer", "autumn", "winter"], tags: ["酪農", "牧場"],
+    accessTime: "空港から車40分",
     sns: [
       { type: "instagram", url: "https://instagram.com/example", label: "@tanaka_farm" },
       { type: "youtube", url: "https://youtube.com/example", label: "田中牧場チャンネル" },
     ],
   },
   {
-    id: "p4", layer: "person", name: "山田 健太", area: "釧路",
+    id: "p4", layer: "person", name: "山田 健太", area: "釧路", areaId: "kushiro",
     specialty: "アウトドアガイド", photo: P.outdoor, gallery: [P.outdoor, P.canoe2],
     desc: "釧路に残ったアウトドアのプロ。",
     message: "湿原は水面から見ると別世界が広がってる。",
+    price: "¥12,000〜", seasons: ["spring", "summer", "autumn", "winter"], tags: ["知床", "自然"],
+    accessTime: "空港から車1時間30分",
     sns: [
       { type: "instagram", url: "https://instagram.com/example", label: "@yamada_outdoor" },
       { type: "website", url: "https://example.com", label: "公式サイト" },
@@ -171,55 +179,71 @@ export const PEOPLE: Person[] = [
 
 export const STAYS: Stay[] = [
   {
-    id: "s1", layer: "stay", name: "ボシュラン 温泉旅館", area: "中標津",
+    id: "s1", layer: "stay", name: "ボシュラン 温泉旅館", area: "中標津", areaId: "nakashibetsu",
     type: "温泉旅館", price: "¥18,000〜", photo: P.onsen, gallery: [P.onsen, P.onsen2],
     desc: "源泉掛け流し。オシンコシンの滝を眺めながら入浴。冬はシマフクロウにも会える。",
+    seasons: ["spring", "summer", "autumn", "winter"], tags: ["温泉", "旅館"],
+    accessTime: "空港から車5分",
   },
   {
-    id: "s2", layer: "stay", name: "ゲストハウス ushi", area: "別海",
+    id: "s2", layer: "stay", name: "ゲストハウス ushi", area: "別海", areaId: "betsukai",
     type: "ゲストハウス", price: "¥5,500〜", photo: P.guesthouse, gallery: [P.guesthouse],
     desc: "牧場の納屋を改装。朝食の搾りたて牛乳は飲み放題。",
+    seasons: ["spring", "summer", "autumn", "winter"], tags: ["ファームステイ", "牧場"],
+    accessTime: "空港から車40分",
   },
   {
-    id: "s3", layer: "stay", name: "森のコテージ", area: "標津",
+    id: "s3", layer: "stay", name: "森のコテージ", area: "標津", areaId: "shibetsu",
     type: "一棟貸し", price: "¥25,000〜", photo: P.cottage, gallery: [P.cottage, P.cottage2],
     desc: "薪ストーブ。BBQデッキ付き。最大6名。",
+    seasons: ["spring", "summer", "autumn", "winter"], tags: ["コテージ", "一棟貸し"],
+    accessTime: "空港から車30分",
   },
 ];
 
 export const FOODS: Food[] = [
   {
-    id: "f1", layer: "food", name: "漁師めし処 トモ", area: "標津",
+    id: "f1", layer: "food", name: "漁師めし処 トモ", area: "標津", areaId: "shibetsu",
     photo: P.seafood, gallery: [P.seafood],
     desc: "その日の魚を新鮮シンプルに。ドトの食は一級品。", price: "¥1,500〜",
+    seasons: ["spring", "summer", "autumn", "winter"], tags: ["海鮮", "食堂"],
+    accessTime: "空港から車30分",
   },
   {
     id: "f2", layer: "food", name: "出張シェフ　道東キッチン", area: "全域",
     photo: P.chef, gallery: [P.chef],
     desc: "地元食材コース料理をお泊り先やキャンプ場に。", price: "¥5,000〜/人",
+    seasons: ["spring", "summer", "autumn", "winter"], tags: ["シェフ", "コース料理"],
   },
   {
-    id: "f3", layer: "food", name: "別海ミルクジェラート", area: "別海",
+    id: "f3", layer: "food", name: "別海ミルクジェラート", area: "別海", areaId: "betsukai",
     photo: P.gelato, gallery: [P.gelato],
     desc: "絞りたて牛乳のジェラート。上味がころころ変わる。", price: "¥400〜",
+    seasons: ["spring", "summer", "autumn"], tags: ["ジェラート", "牧場"],
+    accessTime: "空港から車40分",
   },
 ];
 
 export const ITEMS_DATA: Item[] = [
   {
-    id: "i1", layer: "item", name: "e-bikeレンタル", area: "別海・中標津",
+    id: "i1", layer: "item", name: "e-bikeレンタル", area: "別海・中標津", areaId: "nakashibetsu",
     photo: P.ebike, gallery: [P.ebike],
     desc: "電動MTB。坂道も楽チン。", price: "¥4,000/日",
+    seasons: ["spring", "summer", "autumn"], tags: ["自転車", "レンタル"],
+    accessTime: "空港から車5分",
   },
   {
-    id: "i2", layer: "item", name: "レンタカー（4WD）", area: "中標津空港",
+    id: "i2", layer: "item", name: "レンタカー（4WD）", area: "中標津空港", areaId: "nakashibetsu",
     photo: P.car, gallery: [P.car],
     desc: "冬でも安心4WD。スタッドレスも標準装備。", price: "¥8,000/日〜",
+    seasons: ["spring", "summer", "autumn", "winter"], tags: ["レンタカー", "移動"],
+    accessTime: "空港から車5分",
   },
   {
     id: "i3", layer: "item", name: "アウトドアセット", area: "配送対応",
     photo: P.camp, gallery: [P.camp],
     desc: "テント・タープ・焚き火台・調理器具一式。", price: "¥6,000/日",
+    seasons: ["summer", "autumn"], tags: ["キャンプ", "レンタル"],
   },
 ];
 

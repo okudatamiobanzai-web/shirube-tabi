@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { P } from "@/data/photos";
 import { LAYERS, SEASONS } from "@/lib/constants";
-import { EXPERIENCES, COURSES } from "@/data";
+import { ALL_ITEMS, COURSES } from "@/data";
 import { useMyList } from "@/lib/mylist-context";
 import SectionHeader from "./SectionHeader";
 import ItemCard from "./ItemCard";
@@ -12,6 +12,8 @@ import AreaMap from "./AreaMap";
 import CourseCard from "./CourseCard";
 import CourseModal from "./CourseModal";
 import Operator from "./Operator";
+import ReviewSection from "./ReviewSection";
+import FAQSection from "./FAQSection";
 import type { Course, AnyItem } from "@/lib/types";
 import { useLang } from "@/lib/lang-context";
 import LangSwitch from "./LangSwitch";
@@ -32,8 +34,8 @@ export default function TopPage({ onNavigate, onSelectItem }: Props) {
     setTimeout(() => setVisible(true), 60);
   }, []);
 
-  const filteredExperiences = EXPERIENCES.filter(
-    (e) => ssn === "all" || e.seasons?.includes(ssn)
+  const filteredItems = ALL_ITEMS.filter(
+    (e) => ssn === "all" || !e.seasons || e.seasons.includes(ssn)
   );
 
   const handleConsultCourse = (course: Course) => {
@@ -101,6 +103,9 @@ export default function TopPage({ onNavigate, onSelectItem }: Props) {
                 <div className="font-[family-name:var(--font-serif)] text-[18px] text-gold">{l.icon}</div>
                 <div className="font-[family-name:var(--font-sans)] text-[10px] font-semibold text-ink mt-1">{l.label}</div>
                 <div className="font-[family-name:var(--font-mono)] text-[6px] text-mute mt-0.5 tracking-[0.06em]">{l.en}</div>
+                <div className="font-[family-name:var(--font-mono)] text-[8px] text-accent mt-0.5">
+                  {ALL_ITEMS.filter((item) => item.layer === l.id).length}
+                </div>
               </button>
             ))}
           </div>
@@ -145,20 +150,24 @@ export default function TopPage({ onNavigate, onSelectItem }: Props) {
               </button>
             ))}
           </div>
-          {filteredExperiences.length === 0 ? (
+          {filteredItems.length === 0 ? (
             <p className="font-[family-name:var(--font-sans)] text-[11px] text-mute text-center py-4">
               {t("list.noSeason")}
             </p>
           ) : (
             <div className="grid grid-cols-2 gap-2">
-              {filteredExperiences.map((item) => (
-                <ItemCard
+              {filteredItems.map((item) => (
+                <div
                   key={item.id}
-                  item={item}
-                  liked={myList.includes(item.id)}
-                  onToggle={() => toggle(item.id)}
-                  onSelect={() => onSelectItem(item)}
-                />
+                  className="season-item-enter"
+                >
+                  <ItemCard
+                    item={item}
+                    liked={myList.includes(item.id)}
+                    onToggle={() => toggle(item.id)}
+                    onSelect={() => onSelectItem(item)}
+                  />
+                </div>
               ))}
             </div>
           )}
@@ -186,14 +195,20 @@ export default function TopPage({ onNavigate, onSelectItem }: Props) {
           </div>
         </div>
 
+        {/* Reviews */}
+        <ReviewSection />
+
         {/* Operator */}
-        <div className="pb-5">
+        <div className="pt-6 pb-5">
           <SectionHeader en="Your Concierge" ja={t("section.concierge")} />
           <Operator />
         </div>
 
+        {/* FAQ */}
+        <FAQSection />
+
         {/* CTA */}
-        <div className="pb-9 text-center">
+        <div className="pt-4 pb-9 text-center">
           <button
             onClick={() => onNavigate("builder")}
             className="w-full py-3.5 bg-accent text-white border-none rounded-md font-[family-name:var(--font-serif)] text-[14px] cursor-pointer tracking-[0.04em]"
@@ -203,6 +218,21 @@ export default function TopPage({ onNavigate, onSelectItem }: Props) {
           <p className="font-[family-name:var(--font-sans)] text-[10px] text-mute mt-2">
             {t("btn.buildTripSub")}
           </p>
+        </div>
+
+        {/* Direct consult button */}
+        <div className="pb-6 text-center">
+          <button
+            onClick={() => onNavigate("builder")}
+            className="w-full py-3 rounded-md font-[family-name:var(--font-serif)] text-[13px] cursor-pointer tracking-[0.03em]"
+            style={{
+              background: "transparent",
+              color: "#E5382A",
+              border: "1px solid #F08070",
+            }}
+          >
+            {t("btn.consultDirect")}
+          </button>
         </div>
 
         {/* Footer */}
