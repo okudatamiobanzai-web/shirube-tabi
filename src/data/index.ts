@@ -28,103 +28,77 @@ export const DRIVE_TIMES = [
 
 export const EXPERIENCES: Experience[] = [
   {
-    id: "e7", layer: "experience", name: "ホワイトキャンバス・スタジオ", area: "中標津", areaId: "nakashibetsu",
-    person: "しるべスタッフ", cat: "知", seasons: ["winter"],
-    duration: "3時間", price: "¥15,000〜", photo: P.whitecanvas,
-    gallery: [P.whitecanvas, P.whitecanvas2], videoId: "-w0WbDUowLA",
-    desc: "地平線まで続く雪原が、あなただけの巨大スタジオに。ドローン足跡アート、極寒シチュー、雪原テントサウナ、トリックフォト。何もない白い世界で、常識外れの1枚を撮れ。",
-    tags: ["雪原", "撮影", "冬限定", "クリエイティブ"],
-    lat: 43.5555, lng: 144.9719,
-  },
-  {
-    id: "e9", layer: "experience", name: "開陽台クリームシチュー体験", area: "中標津", areaId: "nakashibetsu",
-    person: "しるべスタッフ", cat: "野", seasons: ["spring", "summer", "autumn"],
-    duration: "2時間", price: "¥6,000〜/人", photo: P.stew,
-    gallery: [P.stew, P.stew2], videoId: "0iDZJeSclrE",
-    desc: "開陽台の絶景キャンプ場で、ファイヤースターターで火起こしから挑戦。100%中標津産のミルキーポーク・野菜・牛乳でダッチオーブンシチューを育てる。手間ひまが最高のスパイス。",
-    tags: ["開陽台", "料理", "アウトドア", "家族向け"],
-    lat: 43.5330, lng: 145.0280,
-  },
-  {
-    id: "e10", layer: "experience", name: "地平線サイクリング＆ピザ作り", area: "中標津", areaId: "nakashibetsu",
-    person: "しるべスタッフ", cat: "野", seasons: ["spring", "summer", "autumn"],
-    duration: "3時間", price: "¥10,000〜/人", photo: P.ebikepizza,
-    gallery: [P.ebikepizza, P.ebikepizza2], videoId: "8yR4K1hqP0g",
-    desc: "E-BIKEで開陽台展望台を経由し、地平線を見渡す絶景ダウンヒル。戻ったら中標津産小麦と地元チーズでポータブル窯ピザを焼く。走って・作って・食べる、3時間の贅沢。",
-    tags: ["E-BIKE", "ピザ", "開陽台", "サイクリング"],
-    lat: 43.5330, lng: 145.0280,
-  },
-  {
-    id: "e8", layer: "experience", name: "なかしべつむかしそば作り", area: "中標津", areaId: "nakashibetsu",
-    person: "伝成館ガイド", cat: "知", seasons: ["spring", "summer", "autumn", "winter"],
-    duration: "2時間", price: "¥7,150〜/人", photo: P.soba,
-    gallery: [P.soba, P.soba2], videoId: "ePPWioBnGhQ",
-    desc: "登録有形文化財「伝成館」を貸し切り、開拓時代の食文化を追体験。冷害に強く命を繋いだそばを、昔ながらの製麺機で十割そばに仕上げる。打ちたて・茹でたての香りは格別。",
-    tags: ["文化財", "そば", "食文化", "通年"],
-    lat: 43.5530, lng: 144.9750,
-  },
-  {
-    id: "e1", layer: "experience", name: "漁師の船釣り体験", area: "標津", areaId: "shibetsu",
-    person: "波心会漁師", cat: "海", seasons: ["spring", "summer", "autumn"],
-    duration: "4時間", price: "¥12,000〜", photo: P.fishing,
-    gallery: [P.fishing, P.fishing2, P.fishing3], videoId: "dQw4w9WgXcQ",
-    desc: "現役漁師の最強船長と、地元の漁師と一緒に船に乗り込む。狙うのはサケ、カラフトマス、ホッケ。釣れた魚はその場でさばいて昼食に。海の上で味わう朝メシは格別。",
-    tags: ["海", "漁師", "魚付"],
-    lat: 43.6622, lng: 145.1350,
-  },
-  {
-    id: "e2", layer: "experience", name: "酪農サイクリング", area: "別海", areaId: "betsukai",
-    person: "田中牧場", cat: "牧", seasons: ["spring", "summer", "autumn", "winter"],
-    duration: "3時間", price: "¥8,000〜", photo: P.cycling,
-    gallery: [P.cycling, P.cycling2, P.cycling3], videoId: null,
-    desc: "日本一の酪農地帯をe-bikeで駆け抜ける。牛舎で絞りたてミルクを飲み、サイロに登って地平線を眺める。冬はスノーファットバイクで。",
-    tags: ["牧場", "e-bike", "酪農"],
-    lat: 43.3930, lng: 145.1200,
-  },
-  {
-    id: "e3", layer: "experience", name: "山菜採り＆野草料理", area: "中標津", areaId: "nakashibetsu",
-    person: "木村美代子", cat: "野", seasons: ["spring"],
-    duration: "5時間", price: "¥10,000〜", photo: P.foraging,
-    gallery: [P.foraging, P.foraging2], videoId: "dQw4w9WgXcQ",
-    desc: "春の山道は山菜の宝庫。行者ニンニク、ウド、フキ。達人と歩き、見分け方を学び、その場で天ぷらに。",
-    tags: ["山菜", "料理", "春限定"],
-    lat: 43.5600, lng: 144.9600,
-  },
-  {
-    id: "e4", layer: "experience", name: "カヌーで釧路湿原", area: "釧路", areaId: "kushiro",
-    person: "ガイドコツ", cat: "野", seasons: ["summer", "autumn"],
-    duration: "3時間", price: "¥9,500〜", photo: P.canoe,
-    gallery: [P.canoe, P.canoe2, P.canoe3], videoId: null,
-    desc: "日本最大の湿原を水面からの景色で楽しむ。タンチョウ・エゾシカとの遭遇率90%以上。静寂の中をただ漕ぐ時間。",
-    tags: ["カヌー", "湿原", "野生動物"],
-    lat: 43.0840, lng: 144.4580,
-  },
-  {
-    id: "e5", layer: "experience", name: "秋鮭の遡上ウォッチング", area: "標津", areaId: "shibetsu",
-    person: "標津ガイド", cat: "海", seasons: ["autumn"],
-    duration: "2時間", price: "¥6,000〜", photo: P.salmon,
-    gallery: [P.salmon, P.fishing2], videoId: "dQw4w9WgXcQ",
-    desc: "秋の標津川に帰ってくる、生まれた川に遡上する鮭。壮大な遡上を地元ガイドの解説付きで見学。終わったら近くのちゃんちゃん焼きで締め。",
-    tags: ["鮭", "秋限定", "魚付"],
-    lat: 43.6570, lng: 145.1280,
-  },
-  {
-    id: "e6", layer: "experience", name: "星空グランピング", area: "中標津", areaId: "nakashibetsu",
-    person: "milk staff", cat: "知", seasons: ["spring", "summer", "autumn", "winter"],
-    duration: "1泊", price: "¥15,000〜", photo: P.glamping,
-    gallery: [P.glamping, P.glamping2, P.glamping3], videoId: null,
-    desc: "光害のない中標津の夜は満天の星。暖かい寝袋はいらない地元食材でBBQ。天の川がこんなに見えるとは思わなかった。",
-    tags: ["星空", "グランピング", "宿泊"],
-    lat: 43.5480, lng: 144.9800,
-  },
-  {
     id: "e11", layer: "experience", name: "格子状防風林ホーストレッキング", area: "中標津", areaId: "nakashibetsu",
-    person: "エンデュランス馬術ガイド", cat: "野", seasons: ["spring", "summer", "autumn", "winter"],
-    duration: "1.5〜2.5時間", price: "¥80,000〜/組", photo: P.horse,
+    person: "橋本 美和（エンデュランス馬術2級）", cat: "野", seasons: ["spring", "summer", "autumn", "winter"],
+    duration: "約1.5〜2.5時間", price: "¥80,000〜/組", photo: P.horse,
     gallery: [P.horse, P.horse2], videoId: null,
-    desc: "観光乗馬じゃない。自分の手綱で北海道遺産「格子状防風林」へ分け入る本物のトレッキング。エンデュランス馬術の有資格ガイドが完全プライベートでご案内。未経験者もOK。",
-    tags: ["乗馬", "防風林", "北海道遺産", "通年"],
+    desc: "観光乗馬は、もう終わり。自分の手綱で北海道遺産「格子状防風林」や開陽台周辺へ分け入る、本物のホーストレッキング。エンデュランス馬術の有資格ガイドが1組限定・完全プライベートでご案内します。基本コースは未経験者OK。上級コースでは起伏に富んだ地形を馬と共に駆け抜ける究極の冒険も。料金にはガイド料・馬レンタル・装備一式を含みます。",
+    tags: ["乗馬", "格子状防風林", "北海道遺産", "1組限定", "通年"],
     lat: 43.5400, lng: 145.0100,
+    mapQuery: "開陽台+中標津町",
+    // 基本コース: 80,000円/組(1-2名)、3名〜+30,000円/人
+    // 上級コース: 150,000円/組(1名)、2名〜+50,000円/人
+    // 予約締切: 14日前 / キャンセル: 7日前30%, 3日前50%, 当日100%
+    // 体重80kg以下 / 傷害保険自己加入必須
+  },
+  {
+    id: "e7", layer: "experience", name: "中標津ホワイトキャンバス・スタジオ", area: "中標津", areaId: "nakashibetsu",
+    person: "しるべスタッフ（専属アシスタント1〜2名同行）", cat: "知", seasons: ["winter"],
+    duration: "約2.5〜3時間", price: "¥25,000〜/組", photo: P.whitecanvas,
+    gallery: [P.whitecanvas, P.whitecanvas2], videoId: "-w0WbDUowLA",
+    desc: "「この雪原は、風景ではありません。あなたのスタジオです。」地平線まで続く広大な農地（私有地）を1組限定で貸し切り。お客様自身が「クリエイター」となり、スタッフは「アシスタント」として撮りたい画作りを全力サポート。ドローン空撮で巨大な地上絵を描いたり、焚き火セットで雪原シチューを作ったり、テントサウナから極寒の雪原へダイブする姿を撮影したり。撮影レシピ・小道具・ホットミルク付き。企業研修やチームビルディングにも。",
+    tags: ["雪原スタジオ", "ドローン空撮", "1組限定", "冬限定", "クリエイティブ"],
+    lat: 43.5555, lng: 144.9719,
+    mapQuery: "中標津町",
+    // 基本料金: 25,000円/組(1-5名)、6名〜+5,000円/人
+    // オプション: ドローン空撮+15,000円、焚き火セット+10,000円、雪原シチュー+5,000円〜、テントサウナ+30,000円
+    // 催行: 1月上旬〜3月上旬 / 予約締切: 7日前 / キャンセル: 3日前50%, 当日100%
+    // 服装: 上下防水スキーウェア+スノーブーツ推奨
+  },
+  {
+    id: "e9", layer: "experience", name: "開陽台で育てる日本一のクリームシチュー体験", area: "中標津", areaId: "nakashibetsu",
+    person: "しるべスタッフ", cat: "野", seasons: ["spring", "summer", "autumn"],
+    duration: "約2時間", price: "¥6,000〜/人", photo: P.stew,
+    gallery: [P.stew, P.stew2], videoId: "0iDZJeSclrE",
+    desc: "手間ひまが最高のスパイス！開陽台の絶景キャンプ場で、ファイヤースターターを使い火花からの火起こしに挑戦。100%中標津産食材（ミルキーポーク、野菜、牛乳）をダッチオーブンでじっくりコトコト。仲間と協力して育てたクリームシチューを、中標津産小麦のカンパーニュ（特製パン）と共に味わいます。「これに勝るシチューはない」と実感できる、究極の食体験。お子様連れも歓迎。",
+    tags: ["開陽台", "焚き火", "アウトドア料理", "家族向け", "中標津産食材"],
+    lat: 43.5330, lng: 145.0280,
+    mapQuery: "開陽台キャンプ場+中標津町",
+    // 料金: 2名12,000円、3名〜+3,500円/人（税抜）
+    // 催行: 5月上旬〜10月下旬 / 最少2名〜最大6名
+    // 予約締切: 7日前 / キャンセル: 3日前50%, 当日100%
+    // 小学生以上大人同額 / 未就学児無料
+    // 含む: ガイド料・食材一式・焚き火台・ダッチオーブン・食器・保険
+  },
+  {
+    id: "e10", layer: "experience", name: "地平線サイクリング＆地元チーズのピザ作り", area: "中標津", areaId: "nakashibetsu",
+    person: "しるべスタッフ", cat: "野", seasons: ["spring", "summer", "autumn"],
+    duration: "約3時間", price: "¥10,000〜/人", photo: P.ebikepizza,
+    gallery: [P.ebikepizza, P.ebikepizza2], videoId: "8yR4K1hqP0g",
+    desc: "電動アシスト自転車（E-BIKE）で地平線を見渡せる開陽台展望台を経由し、絶景ルートをサイクリング（約1時間）。開陽の丘キャンプ場に戻った後は、中標津産小麦と地元チーズをたっぷり使った本格ピザ作り体験。ポータブルピザ窯で焼き上げる熱々をお召し上がりください。走って・作って・食べる、3時間の贅沢。雨天時は室内ピザ窯でピザ作りのみ実施も可能。",
+    tags: ["E-BIKE", "ピザ窯", "開陽台", "サイクリング", "絶景"],
+    lat: 43.5330, lng: 145.0280,
+    mapQuery: "開陽の丘+中標津町俣落",
+    // 料金: 2名20,000円、3名〜+6,000円/人（税抜）
+    // 催行: 5月上旬〜10月下旬 / 最少2名〜最大5名
+    // 参加条件: 18歳以上・身長160cm以上
+    // 予約締切: 7日前 / キャンセル: 3日前50%, 当日100%
+    // 含む: E-BIKEレンタル・ヘルメット・ガイド料・ピザ材料・保険
+  },
+  {
+    id: "e8", layer: "experience", name: "伝成館でつくる「なかしべつむかしそば」作り体験", area: "中標津", areaId: "nakashibetsu",
+    person: "伝成館ガイド", cat: "知", seasons: ["spring", "summer", "autumn", "winter"],
+    duration: "約2時間", price: "¥7,150〜/人", photo: P.soba,
+    gallery: [P.soba, P.soba2], videoId: "ePPWioBnGhQ",
+    desc: "中標津の開拓の歴史を今に伝える登録有形文化財「伝成館」（旧農地試験場）を貸し切り、かつての食文化を追体験。冷害に強く人々の命を繋いだ「そば」を、戦後の家庭で活躍した製麺機を使って十割そばに仕上げます。「子供がハンドルを回す係だったんだよ」と語られる家族の思い出の味。茹でたて・打ちたての香り高いそばを、歴史ある空間でじっくりと味わってください。",
+    tags: ["登録有形文化財", "十割そば", "食文化体験", "通年", "伝成館"],
+    lat: 43.5530, lng: 144.9750,
+    mapQuery: "伝成館+中標津町",
+    // 料金: 基本2名14,300円、3名〜+2,750円/人（税込）
+    // 催行: 通年 / 最少2名〜最大8名
+    // 予約締切: 7日前 / キャンセル: 3日前50%, 当日100%
+    // そばアレルギー不可 / 小学生以上大人同額 / 未就学児無料
+    // 含む: 伝成館貸切料・ガイド料・そば粉一式・製麺機レンタル・保険
   },
 ];
 

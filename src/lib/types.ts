@@ -26,6 +26,7 @@ export interface BaseItem {
   lng?: number;
   address?: string;
   accessTime?: string;
+  mapQuery?: string;
 }
 
 export interface Experience extends BaseItem {
